@@ -6,6 +6,7 @@ void main() {
     debugShowCheckedModeBanner: false,
     routes: <String, WidgetBuilder>{
       "/Homepage": (BuildContext context) => HomePage(),
+      "/SecondPage": (BuildContext context) => SecondPage(),
     }
   ));
 }
@@ -46,7 +47,17 @@ class HomePage extends StatelessWidget{
                 const Text("Content Here",
                 style: TextStyle(fontSize: 36.0, fontWeight: FontWeight.bold)),
               ],
-
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                onPressed: Navigator.of(context).pushNamed("/SecondPage"),
+                icon: Icon(Icons.flight),
+                padding: EdgeInsets.zero,
+                iconSize: 70.0,
+              )
+            ],
           )
 
         ],
